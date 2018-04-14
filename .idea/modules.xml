@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MCRelease.iml" filepath="$PROJECT_DIR$/MCRelease.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build-channels-by-fc/build-chanels-by-fc.iml" filepath="$PROJECT_DIR$/build-channels-by-fc/build-chanels-by-fc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build-channels-by-fc/build-channels-by-fc.iml" filepath="$PROJECT_DIR$/build-channels-by-fc/build-channels-by-fc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build-channels-by-metainf/build-channels-by-metainf.iml" filepath="$PROJECT_DIR$/build-channels-by-metainf/build-channels-by-metainf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build-channels-by-metainf/java.iml" filepath="$PROJECT_DIR$/build-channels-by-metainf/java.iml" />
+    </modules>
+  </component>
+</project>
