@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MCRelease.iml" filepath="$PROJECT_DIR$/MCRelease.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/build-channels-by-fc/build-chanels-by-fc.iml" filepath="$PROJECT_DIR$/build-channels-by-fc/build-chanels-by-fc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build-channels-adapt-v2/build-channels-adapt-v2.iml" filepath="$PROJECT_DIR$/build-channels-adapt-v2/build-channels-adapt-v2.iml" />
       <module fileurl="file://$PROJECT_DIR$/build-channels-by-fc/build-channels-by-fc.iml" filepath="$PROJECT_DIR$/build-channels-by-fc/build-channels-by-fc.iml" />
       <module fileurl="file://$PROJECT_DIR$/build-channels-by-metainf/build-channels-by-metainf.iml" filepath="$PROJECT_DIR$/build-channels-by-metainf/build-channels-by-metainf.iml" />
       <module fileurl="file://$PROJECT_DIR$/build-channels-by-metainf/java.iml" filepath="$PROJECT_DIR$/build-channels-by-metainf/java.iml" />

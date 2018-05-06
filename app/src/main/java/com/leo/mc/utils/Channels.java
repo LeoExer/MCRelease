@@ -4,6 +4,8 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.leo.adaptv2.ChannelProcessor;
+import com.leo.adaptv2.read.IDvalueReader;
 import com.leo.fc.FileCommentProcessor;
 import com.leo.metainf.MetaInfProcessor;
 
@@ -43,12 +45,32 @@ public class Channels {
         String channelJson = FileCommentProcessor.readFileComment(new File(srcApkPath));
         Log.i(TAG, channelJson);
 
-        String channel = "";
+        String str = "";
         try {
             JSONObject json = new JSONObject(channelJson);
-            channel = json.getString("channel");
+            String channel = json.getString("channel");
+            String channelId = json.getString("channel_id");
+            str = channel + "_" + channelId;
         } catch (JSONException ignore) {}
 
-        return channel;
+        return str;
+    }
+
+    public static String getChannelByIdValue(Context context) {
+        String srcApkPath = ApkUtils.getSrcApkPath(context);
+        if (srcApkPath == null) return "";
+
+        String channelJson = ChannelProcessor.read(new File(srcApkPath));
+        Log.i(TAG, channelJson);
+
+        String str = "";
+        try {
+            JSONObject json = new JSONObject(channelJson);
+            String channel = json.getString("channel");
+            String channelId = json.getString("channel_id");
+            str = channel + "_" + channelId;
+        } catch (JSONException ignore) {}
+
+        return str;
     }
 }

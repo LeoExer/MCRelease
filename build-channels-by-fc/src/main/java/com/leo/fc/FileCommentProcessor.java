@@ -11,18 +11,18 @@ import java.nio.channels.FileChannel;
 
 /**
  * File comment 数据格式：
- * [data][data_len][flag]
+ * [data][data_len][magic]
  *
  * [data] -- Json数据内容
  * [data_len] -- 数据内容长度，占2个字节
- * [flag] -- 标志位（LEO），占3个字节
+ * [magic] -- 魔数 "LEO"，占3个字节
  *
  * Created by wuleo on 2018/3/28.
  */
 
 public class FileCommentProcessor {
 
-    private static final String FLAG = "LEO";
+    private static final String COMMENT_MAGIC = "LEO";
     private static final short BYTE_DATA_LEN = 2;
     private static final String CHARSET = "utf-8";
 
@@ -41,7 +41,7 @@ public class FileCommentProcessor {
             accessFile.seek(index);
 
             short dataLen = (short) length;
-            int tempLength = dataLen + BYTE_DATA_LEN + FLAG.length();
+            int tempLength = dataLen + BYTE_DATA_LEN + COMMENT_MAGIC.length();
             if (tempLength > Short.MAX_VALUE) throw new IllegalArgumentException("Size out of range: " + tempLength);
 
             short fcl = (short) tempLength;
@@ -63,7 +63,7 @@ public class FileCommentProcessor {
             accessFile.write(byteBuffer.array());
 
             // Write flag
-            accessFile.write(FLAG.getBytes(CHARSET));
+            accessFile.write(COMMENT_MAGIC.getBytes(CHARSET));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -79,16 +79,15 @@ public class FileCommentProcessor {
         try {
             accessFile = new RandomAccessFile(apkFile, "r");
             FileChannel fileChannel = accessFile.getChannel();
-
-//            byte[] buffer;
             long index = accessFile.length();
+
             // Read flag
-            index -= FLAG.length();
+            index -= COMMENT_MAGIC.length();
             fileChannel.position(index);
-            ByteBuffer byteBuffer = ByteBuffer.allocate(FLAG.length());
+            ByteBuffer byteBuffer = ByteBuffer.allocate(COMMENT_MAGIC.length());
             fileChannel.read(byteBuffer);
             byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
-            if (!new String(byteBuffer.array(), CHARSET).equals(FLAG)) {
+            if (!new String(byteBuffer.array(), CHARSET).equals(COMMENT_MAGIC)) {
                 return "";
             }
 

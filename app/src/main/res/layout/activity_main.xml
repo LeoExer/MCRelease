@@ -34,6 +34,12 @@
             android:text="Get Channel By FC"
             android:onClick="getChannelByFC"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Channel By ID-value"
+            android:onClick="getChannelByIdValue"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

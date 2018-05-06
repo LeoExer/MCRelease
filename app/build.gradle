@@ -28,4 +28,5 @@ dependencies {
 
     compile project(':build-channels-by-metainf')
     compile project(':build-channels-by-fc')
+    compile project(':build-channels-adapt-v2')
 }

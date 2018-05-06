@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         showChannel(Channels.getChannelByFC(this));
     }
 
+    public void getChannelByIdValue(View view) {
+        showChannel(Channels.getChannelByIdValue(this));
+    }
+
     private void showChannel(String channel) {
         if (TextUtils.isEmpty(channel)) {
             channel = "null";

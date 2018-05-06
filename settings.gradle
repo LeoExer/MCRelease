@@ -1,1 +1,1 @@
-include ':app', ':build-channels-by-metainf', ':build-channels-by-fc'
+include ':app', ':build-channels-by-metainf', ':build-channels-by-fc', ':build-channels-adapt-v2'
